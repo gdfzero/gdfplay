@@ -1,6 +1,6 @@
-# <p style="text-align: center;">Android용 GDF SR SDK</p>
+#Android용 GDF SR SDK
 
-## <p style="text-align: center;">Summary </p>
+##Summary 
 
 Android 기기를 위한 [GDFLab](https://gdflab.com)의 초해상도 기술 SDK.
 
@@ -19,14 +19,14 @@ This class can be applied to
 
 
 ---
-## <p style="text-align: center;">Flowchart</p>
+## Flowchart
 
 <p align="center">
 <img src="./img/flowchart.png"></img>
 </p>
 
 ---
-## <p style="text-align: center;">Usage </p>
+## Usage
 ### Usage of this class with MediaPlayer:
 
 ```java
