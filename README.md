@@ -1,6 +1,6 @@
-#Android용 GDF SR SDK
+# Android용 GDF SR SDK
 
-##Summary 
+## Summary 
 
 Android 기기를 위한 [GDFLab](https://gdflab.com)의 초해상도 기술 SDK.
 
