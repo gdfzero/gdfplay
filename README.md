@@ -34,6 +34,12 @@ This class can be applied to
 
 영상의 모든 프레임에 대해 아래처럼 업스케일을 반복적으로 진행합니다.
 
+- Xcode Version 14.2
+- iOS - Storyboard  14.0 이상 / SwiftUI 15.0 이상
+- Cocoa pod install
+- x86 기반 iphone simulator에서는 정상 동작하지 않습니다.
+- 실제 device에서 테스트
+
 ---
 ## Flowchart
 
