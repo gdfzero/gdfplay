@@ -1,6 +1,6 @@
-# Android용 GDF SR SDK
+# GDF SR SDK
 
-## Summary 
+## Android Summary 
 
 Android 기기를 위한 [GDFLab](https://gdflab.com)의 초해상도 기술 SDK.
 
@@ -18,15 +18,31 @@ This class can be applied to
 영상의 모든 프레임에 대해 아래처럼 업스케일을 반복적으로 진행합니다.
 
 
+## iOS Summary 
+
+iOS 기기를 위한 [GDFLab](https://gdflab.com)의 초해상도 기술 SDK.
+
+[GDFPlay](https://gdfplay.io)는 애플리케이션, `GDFSR`이 실제 SDK 라이브러리 모듈이며, `gdfplayer`는 라이브러리 사용 예시 프로젝트 입니다.
+
+GDFSRProcessor is wrapper of GDFSR library dedicated to Video Super Resolution.
+
+This class can be applied to
+* [Storyboard] ("https://developer.apple.com/documentation/avfoundation/avplayer/") 
+
+
+입력 영상의 해상도를 알게된 시점에 아래의 코드를 이용해 GDFSRProcessor 객체를 생성합니다.
+
+영상의 모든 프레임에 대해 아래처럼 업스케일을 반복적으로 진행합니다.
+
 ---
 ## Flowchart
 
 <p align="center">
-<img src="./img/flowchart.png"></img>
+<img src="./img/flowchart.png">
 </p>
 
 ---
-## Usage
+## Android Usage
 ### Usage of this class with MediaPlayer:
 
 ```java
@@ -132,8 +148,48 @@ class VideoPlayActivity extends AppCompatActivity {
 }
 
 ```
+## iOS Usage
+### Storyboard
+**Example for AVPlayer**
+
+```swift
+import MetalKit
+import AVKit
+import VideoToolbox
+import GDFSRVideo
+
+class VideoMetalView: MTKView {
+    private var videoSR: GDFSRVideo?
+    private var player: AVPlayer?
+    deinit {
+        stop()
+    }
+    func play(stream: URL, scale: Int) throws {
+        device = device ?? MTLCreateSystemDefaultDevice()
+        framebufferOnly = false
+        layer.isOpaque = true
+        let item = AVPlayerItem(url: stream)
+        self.player = AVPlayer(playerItem: item)
+        self.videoSR = GDFSRVideo(metalView: self, videoItem: item, scale: scale) {
+            // now video can be played
+            self.play()
+        }
+    }
+    func play() { player?.play() }
+    func pause() { player?.pause() }
+    func stop() {
+        player?.rate = 0
+        videoSR?.release()
+        videoSR = null
+        player = null
+    }
+}
+```
+
+
 
 
 ### More Information
 For More information and API list guide Please visit 
 <a href="https://gdfplay.io/developer/doc/sdk/get-started/quick-start#gdfsdk">GDFPlay.io</a>
+
