@@ -186,6 +186,67 @@ class VideoMetalView: MTKView {
 }
 ```
 
+```swift
+import Foundation
+import UIKit
+import OSLog
+import GDFSR
+
+class VideoViewController: UIViewController, VideoMetalViewDelegate {
+
+    @IBOutlet weak var videoView: VideoMetalView!
+    @IBOutlet weak var videoControls: UIStackView!
+    @IBOutlet weak var sliProgress: UISlider!
+    @IBOutlet weak var lblElapsed: UILabel!
+    @IBOutlet weak var lblRemain: UILabel!
+    @IBOutlet weak var closeControl: UIStackView!
+    @IBOutlet weak var btnPlay: UIButton!
+    @IBOutlet weak var txtFileName: UITextField!
+    @IBOutlet weak var segBtns: UISegmentedControl!
+    @IBOutlet weak var btnInfo: UIButton!
+    @IBOutlet weak var btnRepeat: UIButton!
+    @IBOutlet weak var noSDKText: UILabel!
+    
+    var fileItem: FileItem!
+
+    private var showState = false
+    private var isAuto = false
+    private var isPlaying = true
+    private let playImage = UIImage(systemName: "play.fill")
+    private let pauseImage = UIImage(systemName: "pause.fill")
+    
+    private var showInfo = false
+    private var repeatVideo = false
+    private var prevPoint: CGPoint = .zero
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        videoView?.videoDelegate = self
+    
+        // set video file name
+        txtFileName.text = fileItem.name
+        showControls(true)
+        
+        // video play
+        DispatchQueue.main.async {
+            if let vv = self.videoView {
+                do {
+                    self.btnPlay?.setBackgroundImage(self.pauseImage, for: .normal)
+                    try vv.play(stream: URL(string:self.fileItem.url)!, scale: self.fileItem.scale ?? 1)
+                    print("[VideoViewControrller] play")
+                } catch {
+                    GDFLog.error("\(error)")
+                    self.onClose(self)
+                }
+            } else {
+                self.onClose(self)
+            }
+        }
+    }
+```
+
 
 
 
