@@ -1,10 +1,10 @@
-Android용 GDF SR SDK
-======================
+# <p style="text-align: center;">Android용 GDF SR SDK</p>
 
-Android 기기를 위한 GDFLab의 초해상도 기술 SDK.
+## <p style="text-align: center;">Summary </p>
 
-`GDFSR`이 실제 SDK 라이브러리 모듈이며, `gdfplayer`는 라이브러리 사용 예시 프로젝트 입니다.
+Android 기기를 위한 [GDFLab](https://gdflab.com)의 초해상도 기술 SDK.
 
+[GDFPlay](https://gdfplay.io)는 애플리케이션, `GDFSR`이 실제 SDK 라이브러리 모듈이며, `gdfplayer`는 라이브러리 사용 예시 프로젝트 입니다.
 
 GDFSRProcessor is wrapper of GDFSR library dedicated to Video Super Resolution.
 
@@ -17,6 +17,16 @@ This class can be applied to
 
 영상의 모든 프레임에 대해 아래처럼 업스케일을 반복적으로 진행합니다.
 
+
+---
+## <p style="text-align: center;">Flowchart</p>
+
+<p align="center">
+<img src="./img/flowchart.png"></img>
+</p>
+
+---
+## <p style="text-align: center;">Usage </p>
 ### Usage of this class with MediaPlayer:
 
 ```java
