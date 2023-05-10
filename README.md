@@ -147,6 +147,7 @@ class VideoPlayActivity extends AppCompatActivity {
     ...
 }
 
+
 ```
 ## iOS Usage
 ### Storyboard
