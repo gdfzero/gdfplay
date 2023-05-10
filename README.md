@@ -1,5 +1,3 @@
-# gdfplay
-
 Android용 GDF SR SDK
 ======================
 
