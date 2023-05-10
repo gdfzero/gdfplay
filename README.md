@@ -150,8 +150,7 @@ class VideoPlayActivity extends AppCompatActivity {
 
 ```
 ## iOS Usage
-### Storyboard
-**Example for AVPlayer**
+### Storyboard Example for AVPlayer
 
 ```swift
 import MetalKit
