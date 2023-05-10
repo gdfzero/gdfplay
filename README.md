@@ -156,7 +156,7 @@ class VideoPlayActivity extends AppCompatActivity {
 import MetalKit
 import AVKit
 import VideoToolbox
-import GDFSRVideo
+import GDFSR
 
 class VideoMetalView: MTKView {
     private var videoSR: GDFSRVideo?
@@ -164,13 +164,13 @@ class VideoMetalView: MTKView {
     deinit {
         stop()
     }
-    func play(stream: URL, scale: Int) throws {
+    func play(stream: URL) throws {
         device = device ?? MTLCreateSystemDefaultDevice()
         framebufferOnly = false
         layer.isOpaque = true
         let item = AVPlayerItem(url: stream)
         self.player = AVPlayer(playerItem: item)
-        self.videoSR = GDFSRVideo(metalView: self, videoItem: item, scale: scale) {
+        self.videoSR = GDFSRVideo(metalView: self, videoItem: item) {
             // now video can be played
             self.play()
         }
@@ -214,7 +214,6 @@ class VideoViewController: UIViewController, VideoMetalViewDelegate {
     private var isPlaying = true
     private let playImage = UIImage(systemName: "play.fill")
     private let pauseImage = UIImage(systemName: "pause.fill")
-    
     private var showInfo = false
     private var repeatVideo = false
     private var prevPoint: CGPoint = .zero
@@ -229,12 +228,15 @@ class VideoViewController: UIViewController, VideoMetalViewDelegate {
         txtFileName.text = fileItem.name
         showControls(true)
         
+        // examplevideo
+        String mediaPath = "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_10MB.mp4"
+        
         // video play
         DispatchQueue.main.async {
             if let vv = self.videoView {
                 do {
                     self.btnPlay?.setBackgroundImage(self.pauseImage, for: .normal)
-                    try vv.play(stream: URL(string:self.fileItem.url)!, scale: self.fileItem.scale ?? 1)
+                    try vv.play(stream: URL(string:String mediaPath)!)
                     print("[VideoViewControrller] play")
                 } catch {
                     GDFLog.error("\(error)")
