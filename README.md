@@ -27,7 +27,7 @@ iOS 기기를 위한 [GDFLab](https://gdflab.com)의 초해상도 기술 SDK.
 GDFSRProcessor is wrapper of GDFSR library dedicated to Video Super Resolution.
 
 This class can be applied to
-* [Storyboard](https://developer.apple.com/documentation/avfoundation/avplayer/) 
+* [AVPlayer](https://developer.apple.com/documentation/avfoundation/avplayer/) 
 
 
 입력 영상의 해상도를 알게된 시점에 아래의 코드를 이용해 GDFSRProcessor 객체를 생성합니다.
