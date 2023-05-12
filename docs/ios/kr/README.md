@@ -45,11 +45,6 @@ This class can be applied to
 
 ---
 ## Usage
-- Xcode Version 14.2
-- iOS - Storyboard  14.0 이상 / SwiftUI 15.0 이상
-- Cocoa pod install
-- x86 기반 iphone simulator에서는 정상 동작하지 않습니다.
-- 실제 device에서 테스트
 ### Storyboard - Usage of this class with AVPlayer:
 
 ```swift
