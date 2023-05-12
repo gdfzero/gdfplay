@@ -39,7 +39,7 @@ This class can be applied to
 ## Flowchart
 
 <p align="center">
-<img src="./img/flowchart.png">
+<img src="./img/GDFPlayFlowChart.png">
 </p>
 
 ---
