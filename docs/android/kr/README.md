@@ -18,6 +18,14 @@ This class can be applied to
 영상의 모든 프레임에 대해 아래처럼 업스케일을 반복적으로 진행합니다.
 
 ---
+
+## Requirements
+- 안드로이드 SDK : 28 /29
+- 안드로이드 컴파일 SDK : 33
+- 안드로이드 NDK : 21.4
+- 퀄컴 스냅드래곤 865 이상의 프로세서가 탑재된 기기에서 잘 동작합니다
+
+---
 ## Recommendations
 <table>
 <tr><th style="text-align:center">해상도</th><th style="text-align:center">업스케일</th></tr>
