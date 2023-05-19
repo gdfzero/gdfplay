@@ -186,11 +186,10 @@ upscaler.upscaleToBitmap(input, result);
 
 // clearBuffers() must be called after inference, or may cause memory leak.
 upscaler.clearBuffers();
-```
 
 
 `upscaler.close()`를 통해 객체를 해제합니다.
-
+```
 
 ### More Information
 For More information and API list guide Please visit 
