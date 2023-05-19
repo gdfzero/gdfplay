@@ -25,7 +25,7 @@ This class can be applied to
 - 안드로이드 NDK : 21.4
 - 퀄컴 스냅드래곤 865 이상의 프로세서가 탑재된 기기에서 잘 동작합니다
 
----
+----------
 ## Recommendations
 <table>
 <tr><th style="text-align:center">해상도</th><th style="text-align:center">업스케일</th></tr>
@@ -34,7 +34,7 @@ This class can be applied to
 </table>
 위 표는 해상도에 따라 권장하는 배율입니다. SDK 발급 시 고객의 요청에 따라 해상도를 맞춰드립니다. 스트리밍하시는 환경에 맞춰 설정하시면 더욱 효율적으로 사용하실 수 있습니다. 만약 해상도 설정에 관한 문의가 있으시다면 언제든지 문의해주시기 바랍니다.
 
----
+----------
 ## Flowchart
 
 <p align="center">
@@ -42,9 +42,9 @@ This class can be applied to
 </p>
 
 
----
-## Usage With Video
-### Usage of this class with MediaPlayer:
+----------
+## Method 1: Usage With Video
+### Method 1.1: Usage of this class with MediaPlayer:
 
 ```java
 class VideoPlayActivity extends AppCompatActivity {
@@ -81,7 +81,7 @@ class VideoPlayActivity extends AppCompatActivity {
 }
 ```
 
-### Usage of this class with ExoPlayer:
+### Method 1.2: Usage of this class with ExoPlayer:
 ```java
 class VideoPlayActivity extends AppCompatActivity {
     // this ImageView must be placed in layout, where the video will be showed.
@@ -151,7 +151,11 @@ class VideoPlayActivity extends AppCompatActivity {
 
 ```
 
-## Usage With Image (Frame by Frame)
+
+</n>
+</n>
+----------
+## Method 2 : Usage With Image (Frame by Frame)
 This methods gives SDK users power to upscale Frame by Frame regardless of player they Use
 ### 예제
 
@@ -181,13 +185,15 @@ Bitmap result: 	// output video frame(must be allocated)
 // do upscale inference
 upscaler.upscaleToBitmap(input, result);
 
-// use result Bitmap object
+// use result Bitmap object in your code
 ...
 
-// clearBuffers() must be called after inference, or may cause memory leak.
+// clearBuffers() must be called after each time inference (upscaleToBitmap) is called, or may cause memory leak.
 upscaler.clearBuffers();
 
 
+
+//When video/stream finished
 `upscaler.close()`를 통해 객체를 해제합니다.
 ```
 
