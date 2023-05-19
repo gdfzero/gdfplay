@@ -151,7 +151,6 @@ class VideoPlayActivity extends AppCompatActivity {
 
 ```
 
-<\n>
 
 ----------
 ## Method 2 : Usage With Image (Frame by Frame SR)
