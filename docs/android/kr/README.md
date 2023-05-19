@@ -152,7 +152,7 @@ class VideoPlayActivity extends AppCompatActivity {
 ```
 
 
-<\n>
+<newline>
 <newline>
 ----------
 ## Method 2 : Usage With Image (Frame by Frame SR)
