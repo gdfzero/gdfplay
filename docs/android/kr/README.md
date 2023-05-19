@@ -152,8 +152,8 @@ class VideoPlayActivity extends AppCompatActivity {
 ```
 
 
-</n>
-</n>
+<\n>
+<\n>
 ----------
 ## Method 2 : Usage With Image (Frame by Frame)
 This methods gives SDK users power to upscale Frame by Frame regardless of player they Use
