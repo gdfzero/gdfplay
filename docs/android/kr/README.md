@@ -43,7 +43,7 @@ This class can be applied to
 
 
 ---
-## Usage
+## Usage With Video
 ### Usage of this class with MediaPlayer:
 
 ```java
@@ -150,6 +150,46 @@ class VideoPlayActivity extends AppCompatActivity {
 
 
 ```
+
+## Usage With Image (Frame by Frame)
+This methods gives SDK users power to upscale Frame by Frame regardless of player they Use
+### 예제
+
+다른 API 호출전에 아래의 코드를 통해 초기화가 선행되어야 합니다. 최초 Activity 생성시 호출 가능합니다.
+
+```java
+// initialize GDFUpscaler
+GDFUpscaler.initialize(getApplicationContext());
+```
+
+입력 영상의 해상도를 알게된 시점에 아래의 코드를 이용해 GDFUpsacler 객체를 생성합니다.
+
+```java
+// create GDFUpscaler instance
+GDFUpscaler upscaler = GDFUpscaler.getUpscaler(width, height);
+```
+영상의 모든 프레임에 대해 아래처럼 업스케일을 반복적으로 진행합니다.
+
+### ByteBuffer to Bitmap
+
+```java
+ByteBuffer input;	// input video frame(ARGB_8888)
+Bitmap result: 	// output video frame(must be allocated)  
+//i.e result =  Bitmap.createBitmap(width * scale, height * scale, Bitmap.Config.ARGB_8888);
+//where  scale = upscaler.getScale();
+
+// do upscale inference
+upscaler.upscaleToBitmap(input, result);
+
+// use result Bitmap object
+...
+
+// clearBuffers() must be called after inference, or may cause memory leak.
+upscaler.clearBuffers();
+```
+
+
+`upscaler.close()`를 통해 객체를 해제합니다.
 
 
 ### More Information
