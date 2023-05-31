@@ -151,7 +151,7 @@ class VideoPlayActivity extends AppCompatActivity {
 
 ```
 
-
+<!--- 
 ----------
 ## Method 2 : Usage With Image (Frame by Frame SR)
 This methods gives SDK users power to upscale Frame by Frame regardless of player they Use
@@ -194,6 +194,8 @@ upscaler.clearBuffers();
 //When video/stream finished
 `upscaler.close()`를 통해 객체를 해제합니다.
 ```
+
+---> 
 
 ### More Information
 For More information and API list guide Please visit 
