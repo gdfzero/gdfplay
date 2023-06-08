@@ -151,6 +151,58 @@ class VideoPlayActivity extends AppCompatActivity {
 
 ```
 
+### Method 1.3: Usage of this class with IVS Player:
+```java
+
+class VideoPlayActivity extends AppCompatActivity {
+  // this ImageView must be placed in layout, where the video will be showed.
+  private ImageView displayView;
+  // play button should be placed in layout also.
+  private Button btnPlay;
+
+  MediaPlayer player = null;
+  GDFSRProcessor videoSR = null;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+      // media resolution should be one of:
+      // 320x180, 426x240, 480x270, 640x360, 854x480
+      String mediaPath = "https://fcc3ddae59ed.us-west-2.playback.live-video.net/api/video/v1/us-west-2.893648527354.channel.DmumNckWFTqz.m3u8";
+      player = new com.amazonaws.ivs.player.MediaPlayer(this);
+      player.setAutoQualityMode(true);
+      player.load(Uri.parse(mediaPath));
+
+      player.addListener(new Player.Listener() {
+         @Override
+         public void onStateChanged(@NonNull Player.State state) {
+              if (state == Player.State.ENDED) {
+                  // Player has finished playing
+                  // Add your desired logic here
+                   videoSR.release();
+                player.release();
+                videoSR = null;
+                player = null;
+              }
+
+              if(state == Player.State.READY)  {
+
+                  Quality qlty = player.getQuality();
+
+                 Log.i(TAG, "width: "+qlty.getWidth()+", height : "+qlty.getHeight());
+                 videoSR = new GDFSRProcessor(activity, player.getVideoWidth(), player.getVideoHeight());
+                 videoSR.setDisplayView(displayView);
+                 player.setSurface(videoSR.getPlayerSurface());
+
+                player.play();
+              }
+          }
+      });
+  }
+  ...
+}
+
+```
+
 <!--- 
 ----------
 ## Method 2 : Usage With Image (Frame by Frame SR)
