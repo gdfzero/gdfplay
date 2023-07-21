@@ -56,19 +56,22 @@ import GDFSR
 class VideoMetalView: MTKView {
     private var videoSR: GDFSRVideo?
     private var player: AVPlayer?
+
     deinit {
         stop()
     }
     func play(stream: URL) throws {
+        let item: AVPlayerItem = AVPlayerItem(url: stream)
+        let maxResSize: CGSize = CGSize(width: 854, height: 480)
+        let scale: Int = 2
         device = device ?? MTLCreateSystemDefaultDevice()
         framebufferOnly = false
         layer.isOpaque = true
-        let item = AVPlayerItem(url: stream)
         self.player = AVPlayer(playerItem: item)
-        self.videoSR = GDFSRVideo(metalView: self, videoItem: item) {
+        self.videoSR = GDFSRVideo(metalView: self, videoItem: item, maxResSize: maxResSize, scale: scale, completionHandler: {
             // now video can be played
             self.play()
-        }
+        })
     }
     func play() { player?.play() }
     func pause() { player?.pause() }
