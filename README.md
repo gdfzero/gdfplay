@@ -1,259 +1,171 @@
-# GDF SR SDK
+# just-the-docs-template
 
-## Android Summary 
+This is a *bare-minimum* template to create a [Jekyll] site that:
 
-Android 기기를 위한 [GDFLab](https://gdflab.com)의 초해상도 기술 SDK.
+- uses the [Just the Docs] theme;
+- can be built and published on [GitHub Pages];
+- can be built and previewed locally, and published on other platforms.
 
-[GDFPlay](https://gdfplay.io)는 애플리케이션, `GDFSR`이 실제 SDK 라이브러리 모듈이며, `gdfplayer`는 라이브러리 사용 예시 프로젝트 입니다.
+More specifically, the created site:
 
-GDFSRProcessor is wrapper of GDFSR library dedicated to Video Super Resolution.
+- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem;
+- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages.
 
-This class can be applied to
-* <a href="https://developer.android.com/guide/topics/media/mediaplayer">MediaPlayer</a> or
-* <a href="https://exoplayer.dev">ExoPlayer</a>.
+To get started with creating a site, just click "[use this template]"!
 
+If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](#hosting-your-docs-from-an-existing-project-repo).
 
-입력 영상의 해상도를 알게된 시점에 아래의 코드를 이용해 GDFSRProcessor 객체를 생성합니다.
+After completing the creation of your new site on GitHub, update it as needed:
 
-영상의 모든 프레임에 대해 아래처럼 업스케일을 반복적으로 진행합니다.
+## Replace the content of the template pages
 
+Update the following files to your own content:
 
-## iOS Summary 
+- `index.md` (your new home page)
+- `README.md` (information for those who access your site repo on GitHub)
 
-iOS 기기를 위한 [GDFLab](https://gdflab.com)의 초해상도 기술 SDK.
+## Changing the version of the theme and/or Jekyll
 
-[GDFPlay](https://gdfplay.io)는 애플리케이션, `GDFSR`이 실제 SDK 라이브러리 모듈이며, `gdfplayer`는 라이브러리 사용 예시 프로젝트 입니다.
+Simply edit the relevant line(s) in the `Gemfile`.
 
-GDFSRProcessor is wrapper of GDFSR library dedicated to Video Super Resolution.
+## Adding a plugin
 
-This class can be applied to
-* [AVPlayer](https://developer.apple.com/documentation/avfoundation/avplayer/) 
+The Just the Docs theme automatically includes the [`jekyll-seo-tag`] plugin.
 
+To add an extra plugin, you need to add it in the `Gemfile` *and* in `_config.yml`. For example, to add [`jekyll-default-layout`]:
 
-입력 영상의 해상도를 알게된 시점에 아래의 코드를 이용해 GDFSRProcessor 객체를 생성합니다.
+- Add the following to your site's `Gemfile`:
 
-영상의 모든 프레임에 대해 아래처럼 업스케일을 반복적으로 진행합니다.
+  ```ruby
+  gem "jekyll-default-layout"
+  ```
 
+- And add the following to your site's `_config.yml`:
 
----
-## Flowchart
+  ```yaml
+  plugins:
+    - jekyll-default-layout
+  ```
 
-<p align="center">
-<img src="./img/GDFPlayFlowChart.png">
-</p>
+Note: If you are using a Jekyll version less than 3.5.0, use the `gems` key instead of `plugins`.
 
----
-## Android Usage
-### Usage of this class with MediaPlayer:
+## Publishing your site on GitHub Pages
 
-```java
-class VideoPlayActivity extends AppCompatActivity {
-    // this ImageView must be placed in layout, where the video will be showed.
-    private ImageView displayView;
-    // play button should be placed in layout also.
-    private Button btnPlay;
+1.  If your created site is `YOUR-USERNAME/YOUR-SITE-NAME`, update `_config.yml` to:
 
-    MediaPlayer player = null;
-    GDFSRProcessor videoSR = null;
+    ```yaml
+    title: YOUR TITLE
+    description: YOUR DESCRIPTION
+    theme: just-the-docs
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        // media resolution should be one of:
-        // 320x180, 426x240, 480x270, 640x360, 854x480
-        String mediaPath = "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_10MB.mp4";
-        player = new MediaPlayer()
-        player.setDataSource(mediaPath);
-        player.prepareAsync();
-        player.setOnPreparedListener(mp -> {
-            videoSR = new GDFSRProcessor(activity, player.getVideoWidth(), player.getVideoHeight());
-            videoSR.setDisplayView(displayView);
-            player.setSurface(videoSR.getPlayerSurface());
-            player.setOnCompletionListener(p -> {
-                videoSR.release();
-                player.release();
-                videoSR = null;
-                player = null;
-            });
-            player.start();
-        });
-    }
-  ...
-}
-```
+    url: https://YOUR-USERNAME.github.io/YOUR-SITE-NAME
 
-### Usage of this class with ExoPlayer:
-```java
-class VideoPlayActivity extends AppCompatActivity {
-    // this ImageView must be placed in layout, where the video will be showed.
-    private ImageView displayView;
-    // play button should be placed in layout also.
-    private Button btnPlay;
+    aux_links: # remove if you don't want this link to appear on your pages
+      Template Repository: https://github.com/YOUR-USERNAME/YOUR-SITE-NAME
+    ```
 
-    ExoPlayer player = null;
-    GDFSRProcessor videoSR = null;
+2.  Push your updated `_config.yml` to your site on GitHub.
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        // media resolution should be one of:
-        // 320x180, 426x240, 480x270, 640x360, 854x480
-        String mediaPath = "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_10MB.mp4";
-        Uri uri = Uri.parse(mediaPath);
-        DataSource.Factory dataSourceFactory = new DefaultDataSource.Factory(this);
-        MediaSource mediaSource;
-        @C.ContentType int type = Util.inferContentType(uri);
-        if (type == C.CONTENT_TYPE_DASH) {
-            mediaSource =
-                new DashMediaSource.Factory(dataSourceFactory)
-                    .createMediaSource(MediaItem.fromUri(uri));
-        } else if (type == C.CONTENT_TYPE_OTHER) {
-            mediaSource =
-                new ProgressiveMediaSource.Factory(dataSourceFactory)
-                    .createMediaSource(MediaItem..fromUri(uri));
-        } else {
-            throw new IllegalStateException();
-        }
+3.  In your newly created repo on GitHub:
+    - go to the `Settings` tab -> `Pages` -> `Build and deployment`, then select `Source`: `GitHub Actions`.
+    - if there were any failed Actions, go to the `Actions` tab and click on `Re-run jobs`.
 
-        int videoWidth, videoHeight, videoDuration;
-        try (MediaMetadataRetriever retriever = new MediaMetadataRetriever()) {
-            retriever.setDataSource(uri.toString(), new HashMap<>());
-            String height = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT);
-            String width = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH);
-            String duration = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
-            videoWidth = Integer.parseInt(width);
-            videoHeight = Integer.parseInt(height);
-            videoDuration = Integer.parseInt(duration);
-        } catch (IOException e) {
-            throw new RuntimeException("cannot get video information: "+uri.toString(), e);
-        }
-        player = new ExoPlayer.Builder(this).build();
-        player.setMediaSource(mediaSource);
-        player.prepare();
-        videoSR = new GDFSRProcessor(this, videoWidth, videoHeight);
-        videoSR.setDisplayView(displayView);
-        player.setVideoSurface(videoSR.getPlayerSurface());
-        player.addListener(new Player.Listener() {
-            @Override
-            public void onPlaybackStateChanged(int playbackState) {
-                Player.Listener.super.onPlaybackStateChanged(playbackState);
-                if (playbackState == Player.STATE_ENDED) {
-                    videoSR.release();
-                    player.release();
-                    videoSR = null;
-                    player = null;
-                }
-            }
-        });
-        player.play();
-    }
-    ...
-}
+## Building and previewing your site locally
 
+Assuming [Jekyll] and [Bundler] are installed on your computer:
 
-```
-## iOS Usage
-### Storyboard - Usage of this class with AVPlayer:
+1.  Change your working directory to the root directory of your site.
 
-```swift
-import MetalKit
-import AVKit
-import VideoToolbox
-import GDFSR
+2.  Run `bundle install`.
 
-class VideoMetalView: MTKView {
-    private var videoSR: GDFSRVideo?
-    private var player: AVPlayer?
-    deinit {
-        stop()
-    }
-    func play(stream: URL) throws {
-        device = device ?? MTLCreateSystemDefaultDevice()
-        framebufferOnly = false
-        layer.isOpaque = true
-        let item = AVPlayerItem(url: stream)
-        self.player = AVPlayer(playerItem: item)
-        self.videoSR = GDFSRVideo(metalView: self, videoItem: item) {
-            // now video can be played
-            self.play()
-        }
-    }
-    func play() { player?.play() }
-    func pause() { player?.pause() }
-    func stop() {
-        player?.rate = 0
-        videoSR?.release()
-        videoSR = null
-        player = null
-    }
-}
-```
+3.  Run `bundle exec jekyll serve` to build your site and preview it at `localhost:4000`.
 
-```swift
-import Foundation
-import UIKit
-import OSLog
-import GDFSR
+    The built site is stored in the directory `_site`.
 
-class VideoViewController: UIViewController, VideoMetalViewDelegate {
+## Publishing your built site on a different platform
 
-    @IBOutlet weak var videoView: VideoMetalView!
-    @IBOutlet weak var videoControls: UIStackView!
-    @IBOutlet weak var sliProgress: UISlider!
-    @IBOutlet weak var lblElapsed: UILabel!
-    @IBOutlet weak var lblRemain: UILabel!
-    @IBOutlet weak var closeControl: UIStackView!
-    @IBOutlet weak var btnPlay: UIButton!
-    @IBOutlet weak var txtFileName: UITextField!
-    @IBOutlet weak var segBtns: UISegmentedControl!
-    @IBOutlet weak var btnInfo: UIButton!
-    @IBOutlet weak var btnRepeat: UIButton!
-    @IBOutlet weak var noSDKText: UILabel!
-    
-    var fileItem: FileItem!
+Just upload all the files in the directory `_site`.
 
-    private var showState = false
-    private var isAuto = false
-    private var isPlaying = true
-    private let playImage = UIImage(systemName: "play.fill")
-    private let pauseImage = UIImage(systemName: "pause.fill")
-    private var showInfo = false
-    private var repeatVideo = false
-    private var prevPoint: CGPoint = .zero
+## Customization
 
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+You're free to customize sites that you create with this template, however you like!
 
-        videoView?.videoDelegate = self
-    
-        // set video file name
-        txtFileName.text = fileItem.name
-        showControls(true)
-        
-        // examplevideo
-        String mediaPath = "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_10MB.mp4"
-        
-        // video play
-        DispatchQueue.main.async {
-            if let vv = self.videoView {
-                do {
-                    self.btnPlay?.setBackgroundImage(self.pauseImage, for: .normal)
-                    try vv.play(stream: URL(string:String mediaPath)!)
-                    print("[VideoViewControrller] play")
-                } catch {
-                    GDFLog.error("\(error)")
-                    self.onClose(self)
-                }
-            } else {
-                self.onClose(self)
-            }
-        }
-    }
-```
+[Browse our documentation][Just the Docs] to learn more about how to use this theme.
 
+## Hosting your docs from an existing project repo
 
+You might want to maintain your docs in an existing project repo. Instead of creating a new repo using the [just-the-docs template](https://github.com/just-the-docs/just-the-docs-template), you can copy the template files into your existing repo and configure the template's Github Actions workflow to build from a `docs` directory. You can clone the template to your local machine or download the `.zip` file to access the files.
 
+### Copy the template files
 
-### More Information
-For More information and API list guide Please visit 
-<a href="https://gdfplay.io/developer/doc/sdk/get-started/quick-start#gdfsdk">GDFPlay.io</a>
+1.  Create a `.github/workflows` directory at your project root if your repo doesn't already have one. Copy the `pages.yml` file into this directory. GitHub Actions searches this directory for workflow files.
 
+2.  Create a `docs` directory at your project root and copy all remaining template files into this directory.
+
+### Modify the GitHub Actions workflow
+
+The GitHub Actions workflow that builds and deploys your site to Github Pages is defined by the `pages.yml` file. You'll need to edit this file to that so that your build and deploy steps look to your `docs` directory, rather than the project root.
+
+1.  Set the default `working-directory` param for the build job.
+
+    ```yaml
+    build:
+      runs-on: ubuntu-latest
+      defaults:
+        run:
+          working-directory: docs
+    ```
+
+2.  Set the `working-directory` param for the Setup Ruby step.
+
+    ```yaml
+    - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+          cache-version: 0
+          working-directory: '${{ github.workspace }}/docs'
+    ```
+
+3.  Set the path param for the Upload artifact step:
+
+    ```yaml
+    - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: "docs/_site/"
+    ```
+
+4.  Modify the trigger so that only changes within the `docs` directory start the workflow. Otherwise, every change to your project (even those that don't affect the docs) would trigger a new site build and deploy.
+
+    ```yaml
+    on:
+      push:
+        branches:
+          - "main"
+        paths:
+          - "docs/**"
+    ```
+
+## Licensing and Attribution
+
+This repository is licensed under the [MIT License]. You are generally free to reuse or extend upon this code as you see fit; just include the original copy of the license (which is preserved when you "make a template"). While it's not necessary, we'd love to hear from you if you do use this template, and how we can improve it for future use!
+
+The deployment GitHub Actions workflow is heavily based on GitHub's mixed-party [starter workflows]. A copy of their MIT License is available in [actions/starter-workflows].
+
+----
+
+[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
+
+[Jekyll]: https://jekyllrb.com
+[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
+[GitHub Pages]: https://docs.github.com/en/pages
+[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
+[Bundler]: https://bundler.io
+[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+[`jekyll-default-layout`]: https://github.com/benbalter/jekyll-default-layout
+[`jekyll-seo-tag`]: https://jekyll.github.io/jekyll-seo-tag
+[MIT License]: https://en.wikipedia.org/wiki/MIT_License
+[starter workflows]: https://github.com/actions/starter-workflows/blob/main/pages/jekyll.yml
+[actions/starter-workflows]: https://github.com/actions/starter-workflows/blob/main/LICENSE
