@@ -7,7 +7,7 @@ parent: iOS
 
 # Quick Start
 ## Sample Codes
-### MTKView 활용
+### Run SDK on MTKView
 
 ```swift
 import MetalKit
@@ -46,7 +46,7 @@ class VideoMetalView: MTKView {
 }
 ```
 
-### VideoViewController에서 직접 실행
+### Run SDK on VideoViewController
 
 ```swift
 import Foundation

@@ -7,9 +7,8 @@ parent: iOS
 
 # Requirements
 - SDK: iOS 11 / Storyboard 11
-- SDK 컴파일 iOS 11
+- SDK Compile iOS 11
 - laguege: swift
 - Cocoapod install(TensorFlowLiteSwift/Metal, CryptoSwift)
-- x86 기반 iphone simulator에서는 정상 동작하지 않습니다.(실제 device에서 테스트 요망)
-- tensorflow lite제안으로 인해 SDK는 arm64기반 모바일에서만 작동합니다.
-- iOS 11 지원기기
+- It does not work properly in the x86-based iphone simulator. (Please test on the actual device)
+- Due to the tensorflow lite suggestion, the SDK only works on arm64 based mobiles.
