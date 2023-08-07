@@ -1,3 +1,9 @@
+---
+title: Home
+layout: home
+nav_order: 1
+---
+
 ## Introduction
 
 GDFPlay SDK is a cutting-edge **AI** solution designed to elevate video quality on-the-fly, bringing a new level of clarity and detail to videos as they run in real time. As a video super resolution solution, GDFPlay SDK seamlessly integrates into the workflows of developers working on video providing services. Whether you're an iOS or an Android developer, GDFPlay SDK empowers you to deliver exceptional video quality to your users.

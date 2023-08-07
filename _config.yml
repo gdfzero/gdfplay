@@ -1,0 +1,15 @@
+title: GDFPlay
+description: GDFPlay SDK Documentations
+theme: just-the-docs
+
+url: https://gdfplay.io
+
+aux_links:
+  Docs on Github: https://github.com/gdfzero/gdfplay
+
+
+nav_external_links:
+  - title: GDFPlay
+    url: https://gdfplay.io
+  - title: GDFLab
+    url: https://gdflab.com
