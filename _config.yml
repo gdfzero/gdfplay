@@ -1,8 +1,8 @@
 title: GDFPlay
 description: GDFPlay SDK Documentations
-theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
 
-url: https://gdfplay.io
+url: https://guide.gdfplay.io
 
 aux_links:
   Docs on Github: https://github.com/gdfzero/gdfplay

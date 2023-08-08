@@ -7,9 +7,9 @@ parent: Android
 
 # Getting Started
 
-Android 기기를 위한 [GDFLab](https://gdflab.com)의 초해상도 기술 SDK.
+Super Resolution Technology SDK from [GDFLab](https://gdflab.com) for Android devices.
 
-[GDFPlay](https://gdfplay.io)는 애플리케이션, `GDFSR`이 실제 SDK 라이브러리 모듈이며, `gdfplayer`는 라이브러리 사용 예시 프로젝트 입니다.
+[GDFPlay](https://gdfplay.io) is an application, `GDFSR` is an actual SDK library module, and `gdfplayer` is an example project for using the library.
 
 GDFSRProcessor is wrapper of GDFSR library dedicated to Video Super Resolution.
 
@@ -19,6 +19,6 @@ This class can be applied to
 * <a href="https://docs.aws.amazon.com/ivs/latest/userguide/player.html">IVS Player</a>.
 
 
-입력 영상의 해상도를 알게된 시점에 아래의 코드를 이용해 GDFSRProcessor 객체를 생성합니다.
+When the resolution of the input video is known, create a GDFSRProcessor object using the code below.
 
-영상의 모든 프레임에 대해 아래처럼 업스케일을 반복적으로 진행합니다
+Repeat upscaling for every frame of the video as shown below.
