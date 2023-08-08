@@ -6,7 +6,7 @@ parent: Android
 ---
 
 # Requirements
-- SDK: Android SDK 28 / 29
+- SDK: Android SDK 24
 - SDK 컴파일: Android SDK 33
 - NDK :  Android NDK 21.4
 - laguege: Java/Kotlin
