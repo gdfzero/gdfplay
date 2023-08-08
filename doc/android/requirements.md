@@ -6,7 +6,7 @@ parent: Android
 ---
 
 # Requirements
-- SDK: Android SDK 28 / 29
+- SDK Minimum: Android SDK 24
 - SDK compilation: Android SDK 33
 - NDK : Android NDK 21.4
 - language: Java/Kotlin
