@@ -1,9 +1,9 @@
 title: GDFPlay Docs
 description: GDFPlay SDK Documentations
 # 로컬 작업시
-theme: just-the-docs
+# theme: just-the-docs
 # 호스팅시
-#remote_theme: just-the-docs/just-the-docs
+remote_theme: just-the-docs/just-the-docs
 
 url: https://guide.gdfplay.io
 
