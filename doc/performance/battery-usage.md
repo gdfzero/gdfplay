@@ -63,7 +63,7 @@ To ensure user expeirence, we have tested battery consumption on both Android an
     </tr>
 </table>
 
-# iOS
+## iOS
 
 <table>
     <tr>
