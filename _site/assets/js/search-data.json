@@ -2,16 +2,16 @@
     "doc": "API References",
     "title": "API References",
     "content": "Click Here for API References . ",
-    "url": "/doc/ios/api-reference.html",
+    "url": "/doc/android/api-reference.html",
     
-    "relUrl": "/doc/ios/api-reference.html"
+    "relUrl": "/doc/android/api-reference.html"
   },"1": {
     "doc": "API References",
     "title": "API References",
     "content": "Click Here for API References . ",
-    "url": "/doc/android/api-reference.html",
+    "url": "/doc/ios/api-reference.html",
     
-    "relUrl": "/doc/android/api-reference.html"
+    "relUrl": "/doc/ios/api-reference.html"
   },"2": {
     "doc": "Architecture",
     "title": "Architecture",
@@ -34,121 +34,184 @@
     
     "relUrl": "/doc/ios/architecture.html#architecture-running-on-mtkview"
   },"5": {
+    "doc": "Battery Usage",
+    "title": "Battery Usage",
+    "content": "To ensure user expeirence, we have tested battery consumption on both Android and iOS . ",
+    "url": "/doc/performance/battery-usage.html",
+    
+    "relUrl": "/doc/performance/battery-usage.html"
+  },"6": {
+    "doc": "Battery Usage",
+    "title": "Android",
+    "content": "| Device | Time Frame | Battery Before SR | Battery After SR | Battery Usage | . | S23 | 20 mins | 100% | 96% | 4% | . | S23 | 30 mins | 95% | 87% | 8% | . | S23 | 60 mins (1 hour) | 95% | 79% | 16% | . | S21 Ultra 5G | 20 mins | 100% | 94% | 6% | . | S21 Ultra 5G | 30 mins | 95% | 87% | 8% | . | S21 Ultra 5G | 60 mins (1 hour) | 95% | 79% | 16% | . ",
+    "url": "/doc/performance/battery-usage.html#android",
+    
+    "relUrl": "/doc/performance/battery-usage.html#android"
+  },"7": {
+    "doc": "Battery Usage",
+    "title": "iOS",
+    "content": "| Device | Time Frame | Battery Before SR | Battery After SR | Battery Usage | . | iPhone 14 | 60 mins (1 hour) | 98% | 81% | 17% | . Results of GDFPlay battery consumption measurement using offline video (854x480) . ",
+    "url": "/doc/performance/battery-usage.html#ios",
+    
+    "relUrl": "/doc/performance/battery-usage.html#ios"
+  },"8": {
     "doc": "Constraints",
     "title": "Constraints",
-    "content": "| Width | Height | Scale Factor | . | 854 | 480 | 3x | . | 480 | 854 | 3x | . | 854 | 480 | 2x | . | 480 | 854 | 2x | . | 640 | 360 | 3x | . | 360 | 640 | 3x | . | 640 | 360 | 2x | . | 360 | 640 | 2x | . 위 표는 기본 제공 모델의 해상도와 배율입니다. 필요시 고객의 요청에 따라 해상도를 맞춰드립니다. 스트리밍하시는 환경에 맞춰 설정하시면 더욱 효율적으로 사용하실 수 있습니다. 만약 해상도 설정에 관한 문의가 있으시다면 언제든지 문의해주시기 바랍니다. ",
+    "content": "| Width | Height | Scale Factor | . | 854 | 480 | 3x | . | 480 | 854 | 3x | . | 854 | 480 | 2x | . | 480 | 854 | 2x | . | 640 | 360 | 3x | . | 360 | 640 | 3x | . | 640 | 360 | 2x | . | 360 | 640 | 2x | . The table above is the resolution and magnification of the built-in model. If necessary, we adjust the resolution according to the customer’s request. You can use it more efficiently if you set it according to the streaming environment. If you have any questions about resolution settings, please feel free to contact us. ",
     "url": "/doc/constraints.html",
     
     "relUrl": "/doc/constraints.html"
-  },"6": {
-    "doc": "Getting Started",
-    "title": "Getting Started",
-    "content": "Android 기기를 위한 GDFLab의 초해상도 기술 SDK. GDFPlay는 애플리케이션, GDFSR이 실제 SDK 라이브러리 모듈이며, gdfplayer는 라이브러리 사용 예시 프로젝트 입니다. GDFSRProcessor is wrapper of GDFSR library dedicated to Video Super Resolution. This class can be applied to . | MediaPlayer or | ExoPlayer. | IVS Player. | . 입력 영상의 해상도를 알게된 시점에 아래의 코드를 이용해 GDFSRProcessor 객체를 생성합니다. 영상의 모든 프레임에 대해 아래처럼 업스케일을 반복적으로 진행합니다 . ",
-    "url": "/doc/android/getting-started.html",
+  },"9": {
+    "doc": "Frame Rate",
+    "title": "Frame Rate",
+    "content": "We ensure smooth and stable performance, enhancing video quality in real-time to provide an immersive viewing experience. During rigorous testing on both Android and IOS devices, we have achieved a stable 30 frames per second output on 480p streaming input. For optimal performance and user satisfaction, we recommend using GDFPlay SDK on the following devices. ",
+    "url": "/doc/performance/frame-rate.html",
     
-    "relUrl": "/doc/android/getting-started.html"
-  },"7": {
+    "relUrl": "/doc/performance/frame-rate.html"
+  },"10": {
+    "doc": "Frame Rate",
+    "title": "Android",
+    "content": "We recommend the following devices: Samsung S23, S22+, S22 Ultra, Tab S8, Tab S8+, Tab Ultra, Z Flip4 and Z Fold 4. | Input Resolution | Scale | S22 | S23 | Tab S8+ | Tab S8 | S22+ | Tab S8 Ultra | S22 Ultra | Z Flip 4 | Z Fold 4 | . | 640x360 | x2 | 60 | 57-60 | 60 | 60 | 57-60 | 60 | 60 | 60 | 60 | . | 854x480 | x2 | 41-48 | 57-58 | 48-53 | 60 | 41-48 | 45-53 | 42-46 | 49-54 | 49-54 | . | 1280x720 | x2 | 24 | 24 | 32 | 31-34 | 29-30 | 31-33 | 26-30 | 31-34 | 31-34 | . The table represents the frames per second on each device with three different input resolutions. ",
+    "url": "/doc/performance/frame-rate.html#android",
+    
+    "relUrl": "/doc/performance/frame-rate.html#android"
+  },"11": {
+    "doc": "Frame Rate",
+    "title": "iOS",
+    "content": "We recommend recent devices released after iPhone SE2. | Input Resolution | Scale | iPhone 14 | iPad Pro 4th Gen | iPhone SE2 | iPhone 8 | iPhone 6 | . | 640x360 | x2 | 30 | 30 | 30 | 30 | 7-8 | . | 854x480 | x2 | 30 | 30 | 30 | 19-21 | 3-5 | . | 1280x720 | x2 | 26 | 24 | 20 | 11-12 | 1-3 | . The table represents the frames per second on each device with three different input resolutions. | Maximum frame rate of iPhone is set to 30fps by a player. | . When streaming videos with 360p,480p and 720p input resolutions GDFPlay SDK will enhance videos in real-time and with the devices tested, we guarantee the following frames per second as provided in the table above. ",
+    "url": "/doc/performance/frame-rate.html#ios",
+    
+    "relUrl": "/doc/performance/frame-rate.html#ios"
+  },"12": {
     "doc": "Getting Started",
     "title": "Getting Started",
     "content": "GDFLab’s Super Resolution Technology SDK for iOS devices. GDFPlayis the application, GDFSRis the SDK library module, gdfplayer is the example project. GDFSRProcessor is wrapper of GDFSR library dedicated to Video Super Resolution. This class can be applied to . | AVPlayer | . ",
     "url": "/doc/ios/getting-started.html",
     
     "relUrl": "/doc/ios/getting-started.html"
-  },"8": {
+  },"13": {
+    "doc": "Getting Started",
+    "title": "Getting Started",
+    "content": "Super Resolution Technology SDK from GDFLab for Android devices. GDFPlay is an application, GDFSR is an actual SDK library module, and gdfplayer is an example project for using the library. GDFSRProcessor is wrapper of GDFSR library dedicated to Video Super Resolution. This class can be applied to . | MediaPlayer or | ExoPlayer. | IVS Player. | . When the resolution of the input video is known, create a GDFSRProcessor object using the code below. Repeat upscaling for every frame of the video as shown below. ",
+    "url": "/doc/android/getting-started.html",
+    
+    "relUrl": "/doc/android/getting-started.html"
+  },"14": {
     "doc": "Home",
     "title": "Introduction",
-    "content": "GDFPlay SDK is a cutting-edge AI solution designed to elevate video quality on-the-fly, bringing a new level of clarity and detail to videos as they run in real time. As a video super resolution solution, GDFPlay SDK seamlessly integrates into the workflows of developers working on video providing services. Whether you’re an iOS or an Android developer, GDFPlay SDK empowers you to deliver exceptional video quality to your users. Key Features and Functionality . Real-time Video Super Resolution: GDFPlay SDK enhances video quality frame by frame, ensuring that every detail shines through, even on resource-constrained devices. Network Cost Reduction: By enhancing video quality directly on the device, GDFPlay SDK significantly reduces the need for high-bandwidth data transfers, resulting in substantial networking cost savings. Optimal Performance in Challenging Networks: GDFPlay SDK not only enhances video quality but also addresses the constraints of unreliable or low-bandwidth networks. By reducing the need for frequent data transfers, it directly contributes to an improved user experience, even in suboptimal network conditions. Cross-Platform Compatibility: Developed for both iOS and Android devices, GDFPlay SDK offers a unified solution for delivering top-tier video quality to a diverse user base. Seamless Integration: GDFPlay SDK is designed to seamlessly integrate into your existing systems, providing a hassle-free experience for developers. Documentation Sections . Android . | Getting Started | Requirements | Architecture | Quick Start | API References iOS . | Getting Started | Requirements | Architecture | Quick Start | API References | . ",
+    "content": "GDFPlay SDK is a cutting-edge AI solution designed to elevate video quality on-the-fly, bringing a new level of clarity and detail to videos as they run in real time. As a video super resolution solution, GDFPlay SDK seamlessly integrates into the workflows of developers working on video providing services. Whether you’re an iOS or an Android developer, GDFPlay SDK empowers you to deliver exceptional video quality to your users, enhancing video quality and optimizing performance even in challenging networking conditions. Key Features and Functionality . Real-time Video Super Resolution: GDFPlay SDK enhances video quality frame by frame, ensuring that every detail shines through, even on resource-constrained devices. Network Cost Reduction: By enhancing video quality directly on the device, GDFPlay SDK significantly reduces the need for high-bandwidth data transfers, resulting in substantial networking cost savings. Optimal Performance in Challenging Networks: GDFPlay SDK not only enhances video quality but also addresses the constraints of unreliable or low-bandwidth networks. By reducing the need for frequent data transfers, it directly contributes to an improved user experience, even in suboptimal network conditions. Cross-Platform Compatibility: Developed for both iOS and Android devices, GDFPlay SDK offers a unified solution for delivering top-tier video quality to a diverse user base. Seamless Integration: GDFPlay SDK is designed to seamlessly integrate into your existing systems, providing a hassle-free experience for developers. Documentation Sections . Android . | Getting Started | Requirements | Architecture | Quick Start | API References | . iOS . | Getting Started | Requirements | Architecture | Quick Start | API References | . Constraints . Release Note . Performance . | Quality | Frame Rate | Battery Usage | . ",
     "url": "/#introduction",
     
     "relUrl": "/#introduction"
-  },"9": {
+  },"15": {
+    "doc": "Home",
+    "title": "Support",
+    "content": "Whether you have questions about the SDK integration, need guidance on optimizing performance, or encounter any technical issues, our dedicated support team will assist you simply by sending us an email away. Link . GDFLab https://gdflab.com . GDFPlay https://gdfplay.io . Email operation@gdflab.com . ",
+    "url": "/#support",
+    
+    "relUrl": "/#support"
+  },"16": {
     "doc": "Home",
     "title": "Home",
     "content": " ",
     "url": "/",
     
     "relUrl": "/"
-  },"10": {
+  },"17": {
     "doc": "iOS",
     "title": "ios",
     "content": " ",
     "url": "/doc/ios/#ios",
     
     "relUrl": "/doc/ios/#ios"
-  },"11": {
+  },"18": {
     "doc": "iOS",
     "title": "iOS",
     "content": " ",
     "url": "/doc/ios/",
     
     "relUrl": "/doc/ios/"
-  },"12": {
+  },"19": {
     "doc": "Android",
     "title": "Android",
     "content": " ",
     "url": "/doc/android/",
     
     "relUrl": "/doc/android/"
-  },"13": {
-    "doc": "Quick Start",
-    "title": "Quick Start",
+  },"20": {
+    "doc": "Performance",
+    "title": "Performance",
     "content": " ",
-    "url": "/doc/ios/quick-start.html",
+    "url": "/doc/performance/",
     
-    "relUrl": "/doc/ios/quick-start.html"
-  },"14": {
-    "doc": "Quick Start",
-    "title": "Sample Codes",
-    "content": "Run SDK on MTKView . import MetalKit import AVKit import VideoToolbox import GDFSR class VideoMetalView: MTKView { private var videoSR: GDFSRVideo? private var player: AVPlayer? deinit { stop() } func play(stream: URL) throws { let item: AVPlayerItem = AVPlayerItem(url: stream) let maxResSize: CGSize = CGSize(width: 854, height: 480) let scale: Int = 2 device = device ?? MTLCreateSystemDefaultDevice() framebufferOnly = false layer.isOpaque = true self.player = AVPlayer(playerItem: item) self.videoSR = GDFSRVideo(metalView: self, videoItem: item, maxResSize: maxResSize, scale: scale, completionHandler: { // now video can be played self.play() }) } func play() { player?.play() } func pause() { player?.pause() } func stop() { player?.rate = 0 videoSR?.release() videoSR = null player = null } } . Run SDK on VideoViewController . import Foundation import UIKit import OSLog import GDFSR class VideoViewController: UIViewController, VideoMetalViewDelegate { @IBOutlet weak var videoView: VideoMetalView! @IBOutlet weak var videoControls: UIStackView! @IBOutlet weak var sliProgress: UISlider! @IBOutlet weak var lblElapsed: UILabel! @IBOutlet weak var lblRemain: UILabel! @IBOutlet weak var closeControl: UIStackView! @IBOutlet weak var btnPlay: UIButton! @IBOutlet weak var txtFileName: UITextField! @IBOutlet weak var segBtns: UISegmentedControl! @IBOutlet weak var btnInfo: UIButton! @IBOutlet weak var btnRepeat: UIButton! @IBOutlet weak var noSDKText: UILabel! var fileItem: FileItem! private var showState = false private var isAuto = false private var isPlaying = true private let playImage = UIImage(systemName: \"play.fill\") private let pauseImage = UIImage(systemName: \"pause.fill\") private var showInfo = false private var repeatVideo = false private var prevPoint: CGPoint = .zero override func viewDidLoad() { super.viewDidLoad() videoView?.videoDelegate = self // set video file name txtFileName.text = fileItem.name showControls(true) // examplevideo String mediaPath = \"https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_10MB.mp4\" // video play DispatchQueue.main.async { if let vv = self.videoView { do { self.btnPlay?.setBackgroundImage(self.pauseImage, for: .normal) try vv.play(stream: URL(string:String mediaPath)!) print(\"[VideoViewControrller] play\") } catch { GDFLog.error(\"\\(error)\") self.onClose(self) } } else { self.onClose(self) } } } . ",
-    "url": "/doc/ios/quick-start.html#sample-codes",
+    "relUrl": "/doc/performance/"
+  },"21": {
+    "doc": "Quality",
+    "title": "Quality",
+    "content": "With GDFPlay SDK, we are dedicated to elevating video quality to provide users with an exceptional viewing experience. Our advanced AI algorithms ensure that users can enjoy enhanced video resolutions based on the input streaming resolutions. For 360p input resolution, GDFplay SDK delivers 540p quality output. When 480p is streamed as input users can expect to enjoy 720p (HD) quality, bringing videos with impressive definition and sharpness. With 720p input resolution, GDFplay SDK elevates the experience to 1080p (FHD) quality. | 360p Streaming Input | 360p → GDFPlay AI | 540p Original | . | | | . | 480p Streaming Input | 480p → GDFPlay AI | 720p(HD) Original | . | | | . | 720p(HD) Streaming Input | 720p(HD) → GDFplay AI | 1080p(FHD) Original | . | | | . ",
+    "url": "/doc/performance/quality.html",
     
-    "relUrl": "/doc/ios/quick-start.html#sample-codes"
-  },"15": {
+    "relUrl": "/doc/performance/quality.html"
+  },"22": {
     "doc": "Quick Start",
     "title": "Quick Start",
     "content": " ",
     "url": "/doc/android/quick-start.html",
     
     "relUrl": "/doc/android/quick-start.html"
-  },"16": {
+  },"23": {
     "doc": "Quick Start",
     "title": "Sample Codes",
     "content": "Usage of this class with MediaPlayer: . class VideoPlayActivity extends AppCompatActivity { // this ImageView must be placed in layout, where the video will be showed. private ImageView displayView; // play button should be placed in layout also. private Button btnPlay; MediaPlayer player = null; GDFSRProcessor videoSR = null; @Override protected void onCreate(Bundle savedInstanceState) { // media resolution should be one of: // 320x180, 426x240, 480x270, 640x360, 854x480 String mediaPath = \"https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_10MB.mp4\"; player = new MediaPlayer() player.setDataSource(mediaPath); player.prepareAsync(); player.setOnPreparedListener(mp -&gt; { videoSR = new GDFSRProcessor(activity, player.getVideoWidth(), player.getVideoHeight()); videoSR.setDisplayView(displayView); player.setSurface(videoSR.getPlayerSurface()); player.setOnCompletionListener(p -&gt; { videoSR.release(); player.release(); videoSR = null; player = null; }); player.start(); }); } ... } . Usage of this class with ExoPlayer: . class VideoPlayActivity extends AppCompatActivity { // this ImageView must be placed in layout, where the video will be showed. private ImageView displayView; // play button should be placed in layout also. private Button btnPlay; ExoPlayer player = null; GDFSRProcessor videoSR = null; @Override protected void onCreate(Bundle savedInstanceState) { // media resolution should be one of: // 320x180, 426x240, 480x270, 640x360, 854x480 String mediaPath = \"https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_10MB.mp4\"; Uri uri = Uri.parse(mediaPath); DataSource.Factory dataSourceFactory = new DefaultDataSource.Factory(this); MediaSource mediaSource; @C.ContentType int type = Util.inferContentType(uri); if (type == C.CONTENT_TYPE_DASH) { mediaSource = new DashMediaSource.Factory(dataSourceFactory) .createMediaSource(MediaItem.fromUri(uri)); } else if (type == C.CONTENT_TYPE_OTHER) { mediaSource = new ProgressiveMediaSource.Factory(dataSourceFactory) .createMediaSource(MediaItem..fromUri(uri)); } else { throw new IllegalStateException(); } int videoWidth, videoHeight, videoDuration; try (MediaMetadataRetriever retriever = new MediaMetadataRetriever()) { retriever.setDataSource(uri.toString(), new HashMap&lt;&gt;()); String height = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT); String width = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH); String duration = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION); videoWidth = Integer.parseInt(width); videoHeight = Integer.parseInt(height); videoDuration = Integer.parseInt(duration); } catch (IOException e) { throw new RuntimeException(\"cannot get video information: \"+uri.toString(), e); } player = new ExoPlayer.Builder(this).build(); player.setMediaSource(mediaSource); player.prepare(); videoSR = new GDFSRProcessor(this, videoWidth, videoHeight); videoSR.setDisplayView(displayView); player.setVideoSurface(videoSR.getPlayerSurface()); player.addListener(new Player.Listener() { @Override public void onPlaybackStateChanged(int playbackState) { Player.Listener.super.onPlaybackStateChanged(playbackState); if (playbackState == Player.STATE_ENDED) { videoSR.release(); player.release(); videoSR = null; player = null; } } }); player.play(); } ... } . ",
     "url": "/doc/android/quick-start.html#sample-codes",
     
     "relUrl": "/doc/android/quick-start.html#sample-codes"
-  },"17": {
+  },"24": {
+    "doc": "Quick Start",
+    "title": "Quick Start",
+    "content": " ",
+    "url": "/doc/ios/quick-start.html",
+    
+    "relUrl": "/doc/ios/quick-start.html"
+  },"25": {
+    "doc": "Quick Start",
+    "title": "Sample Codes",
+    "content": "Run SDK on MTKView . import MetalKit import AVKit import VideoToolbox import GDFSR class VideoMetalView: MTKView { private var videoSR: GDFSRVideo? private var player: AVPlayer? deinit { stop() } func play(stream: URL) throws { let item: AVPlayerItem = AVPlayerItem(url: stream) let maxResSize: CGSize = CGSize(width: 854, height: 480) let scale: Int = 2 device = device ?? MTLCreateSystemDefaultDevice() framebufferOnly = false layer.isOpaque = true self.player = AVPlayer(playerItem: item) self.videoSR = GDFSRVideo(metalView: self, videoItem: item, maxResSize: maxResSize, scale: scale, completionHandler: { // now video can be played self.play() }) } func play() { player?.play() } func pause() { player?.pause() } func stop() { player?.rate = 0 videoSR?.release() videoSR = null player = null } } . Run SDK on VideoViewController . import Foundation import UIKit import OSLog import GDFSR class VideoViewController: UIViewController, VideoMetalViewDelegate { @IBOutlet weak var videoView: VideoMetalView! @IBOutlet weak var videoControls: UIStackView! @IBOutlet weak var sliProgress: UISlider! @IBOutlet weak var lblElapsed: UILabel! @IBOutlet weak var lblRemain: UILabel! @IBOutlet weak var closeControl: UIStackView! @IBOutlet weak var btnPlay: UIButton! @IBOutlet weak var txtFileName: UITextField! @IBOutlet weak var segBtns: UISegmentedControl! @IBOutlet weak var btnInfo: UIButton! @IBOutlet weak var btnRepeat: UIButton! @IBOutlet weak var noSDKText: UILabel! var fileItem: FileItem! private var showState = false private var isAuto = false private var isPlaying = true private let playImage = UIImage(systemName: \"play.fill\") private let pauseImage = UIImage(systemName: \"pause.fill\") private var showInfo = false private var repeatVideo = false private var prevPoint: CGPoint = .zero override func viewDidLoad() { super.viewDidLoad() videoView?.videoDelegate = self // set video file name txtFileName.text = fileItem.name showControls(true) // examplevideo String mediaPath = \"https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_10MB.mp4\" // video play DispatchQueue.main.async { if let vv = self.videoView { do { self.btnPlay?.setBackgroundImage(self.pauseImage, for: .normal) try vv.play(stream: URL(string:String mediaPath)!) print(\"[VideoViewControrller] play\") } catch { GDFLog.error(\"\\(error)\") self.onClose(self) } } else { self.onClose(self) } } } . ",
+    "url": "/doc/ios/quick-start.html#sample-codes",
+    
+    "relUrl": "/doc/ios/quick-start.html#sample-codes"
+  },"26": {
     "doc": "Release Note",
     "title": "Release Note",
     "content": " ",
     "url": "/doc/release-note.html",
     
     "relUrl": "/doc/release-note.html"
-  },"18": {
+  },"27": {
     "doc": "Release Note",
-    "title": "v0.2.0",
+    "title": "v1.1.0",
     "content": "Changed . | Implemented to be compatible with ABS(Adaptive Bitrate Streaming) | . Improvement . | Quality Improvement on Android | . Fixed . | Resolving memory leaks after video terminated in iOS | . ",
-    "url": "/doc/release-note.html#v020",
+    "url": "/doc/release-note.html#v110",
     
-    "relUrl": "/doc/release-note.html#v020"
-  },"19": {
+    "relUrl": "/doc/release-note.html#v110"
+  },"28": {
     "doc": "Release Note",
-    "title": "v0.1.0",
+    "title": "v1.0.0",
     "content": "Released . | GDFSR Released | . ",
-    "url": "/doc/release-note.html#v010",
+    "url": "/doc/release-note.html#v100",
     
-    "relUrl": "/doc/release-note.html#v010"
-  },"20": {
+    "relUrl": "/doc/release-note.html#v100"
+  },"29": {
     "doc": "Requirements",
     "title": "Requirements",
     "content": ". | SDK: iOS 11 / Storyboard 11 | SDK Compile iOS 11 | laguege: swift | Cocoapod install(TensorFlowLiteSwift/Metal, CryptoSwift) | It does not work properly in the x86-based iphone simulator. (Please test on the actual device) | Due to the tensorflow lite suggestion, the SDK only works on arm64 based mobiles. | . ",
     "url": "/doc/ios/requirements.html",
     
     "relUrl": "/doc/ios/requirements.html"
-  },"21": {
+  },"30": {
     "doc": "Requirements",
     "title": "Requirements",
-    "content": ". | SDK: Android SDK 28 / 29 | SDK 컴파일: Android SDK 33 | NDK : Android NDK 21.4 | laguege: Java/Kotlin | x86 기반 android simulator에서는 정상 동작하지 않습니다.(실제 device에서 테스트 요망) | tensorflow lite제안으로 인해 SDK는 arm64-v8a and armeabi-v7a기반 모바일에서만 작동합니다. | . ",
+    "content": ". | SDK: Android SDK 28 / 29 | SDK compilation: Android SDK 33 | NDK : Android NDK 21.4 | language: Java/Kotlin | It does not work properly in the x86-based android simulator. (Please test on the actual device) | Due to the tensorflow lite suggestion, the SDK only works on arm64-v8a and armeabi-v7a based mobiles. | . ",
     "url": "/doc/android/requirements.html",
     
     "relUrl": "/doc/android/requirements.html"

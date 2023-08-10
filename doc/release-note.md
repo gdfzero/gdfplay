@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Release Note
-nav_order: 5
+nav_order: 6
 ---
 
 # Release Note
 
-## v0.2.0
+## v1.1.0
 ### Changed
 - Implemented to be compatible with ABS(Adaptive Bitrate Streaming)
 
@@ -16,6 +16,6 @@ nav_order: 5
 ### Fixed
 - Resolving memory leaks after video terminated in iOS
 
-## v0.1.0
+## v1.0.0
 ### Released
 - GDFSR Released

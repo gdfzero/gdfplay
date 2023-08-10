@@ -7,7 +7,7 @@ nav_order: 1
 ## Introduction
 
 
-GDFPlay SDK is a cutting-edge **AI** solution designed to elevate video quality on-the-fly, bringing a new level of clarity and detail to videos as they run in real time. As a video super resolution solution, GDFPlay SDK seamlessly integrates into the workflows of developers working on video providing services. Whether you're an iOS or an Android developer, GDFPlay SDK empowers you to deliver exceptional video quality to your users.
+GDFPlay SDK is a cutting-edge **AI** solution designed to elevate video quality on-the-fly, bringing a new level of clarity and detail to videos as they run in real time. As a video super resolution solution, GDFPlay SDK seamlessly integrates into the workflows of developers working on video providing services. Whether you're an iOS or an Android developer, GDFPlay SDK empowers you to deliver exceptional video quality to your users, enhancing video quality and optimizing performance even in challenging networking conditions.
 
 ### Key Features and Functionality
 
@@ -39,3 +39,27 @@ GDFPlay SDK is a cutting-edge **AI** solution designed to elevate video quality 
 3. [Architecture](/doc/ios/architecture.html)
 4. [Quick Start](/doc/ios/quick-start.html)
 5. [API References](/doc/ios/api-reference.html)
+
+[Constraints](/doc/constraints.html)
+
+[Release Note](/doc/release-note.html)
+
+#### Performance
+1. [Quality](/doc/performance/quality.html)
+2. [Frame Rate](/doc/performance/frame-rate.html)
+3. [Battery Usage](/doc/performance/battery-usage.html)
+
+---
+## Support
+
+
+Whether you have questions about the SDK integration, need guidance on optimizing performance, or encounter any technical issues, our dedicated support team will assist you simply by sending us an email away.
+
+### Link
+
+
+GDFLab <https://gdflab.com>
+
+GDFPlay <https://gdfplay.io>
+
+Email <operation@gdflab.com>
