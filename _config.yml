@@ -4,6 +4,7 @@ description: GDFPlay SDK Documentations
 # theme: just-the-docs
 # 호스팅시
 remote_theme: just-the-docs/just-the-docs
+favicon_ico: "/assets/favicon.ico"
 
 url: https://guide.gdfplay.io
 
