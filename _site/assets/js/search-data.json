@@ -50,7 +50,7 @@
   },"7": {
     "doc": "Battery Usage",
     "title": "iOS",
-    "content": "| Device | Time Frame | Battery Before SR | Battery After SR | Battery Usage | . | iPhone 14 | 60 mins (1 hour) | 98% | 81% | 17% | . Results of GDFPlay battery consumption measurement using offline video (854x480) . ",
+    "content": "| Device | Time Frame | Battery Before SR | Battery After SR | Battery Usage | . | iPhone 14 | 20 mins | 97% | 92% | 5% | . | iPhone 14 | 30 mins | 97% | 88% | 9% | . | iPhone 14 | 60 mins (1 hour) | 98% | 81% | 17% | . Results of GDFPlay battery consumption measurement using offline video (854x480) . ",
     "url": "/doc/performance/battery-usage.html#ios",
     
     "relUrl": "/doc/performance/battery-usage.html#ios"

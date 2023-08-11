@@ -83,7 +83,7 @@ To ensure user expeirence, we have tested battery consumption on both Android an
         <tr>
         <th>iPhone 14</th>
         <td align="center">30 mins</td>
-        <td align="right">98%</td>
+        <td align="right">97%</td>
         <td align="right">88%</td>
         <td align="right">9%</td>
     </tr>
