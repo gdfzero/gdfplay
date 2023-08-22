@@ -15,8 +15,8 @@ To ensure user expeirence, we have tested battery consumption on both Android an
     <tr>
         <th>Device</th>
         <th>Time Frame</th>
-        <th>Before SR(Beginning of use)</th>
-        <th>After SR(End of use)</th>
+        <th>Start</th>
+        <th>End</th>
         <th>Battery Usage</th>
     </tr>
     <tr>
@@ -69,8 +69,8 @@ To ensure user expeirence, we have tested battery consumption on both Android an
     <tr>
         <th>Device</th>
         <th>Time Frame</th>
-        <th>Before SR(Beginning of use)</th>
-        <th>After SR(End of use)</th>
+        <th>Start</th>
+        <th>End</th>
         <th>Battery Usage</th>
     </tr>
     <tr>
