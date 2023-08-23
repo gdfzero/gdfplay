@@ -87,18 +87,18 @@ We recommend recent devices released after iPhone SE2.
     <tr>
         <th>640x360</th>
         <th>x2</th>
-        <td align="center">30</td>
-        <td align="center">30</td>
-        <td align="center">30</td>
-        <td align="center">30</td>
+        <td align="center">30+</td>
+        <td align="center">30+</td>
+        <td align="center">30+</td>
+        <td align="center">30+</td>
         <td align="center">7-8</td>
     </tr>
     <tr>
         <th>854x480</th>
         <th>x2</th>
-        <td align="center">30</td>
-        <td align="center">30</td>
-        <td align="center">30</td>
+        <td align="center">30+</td>
+        <td align="center">30+</td>
+        <td align="center">30+</td>
         <td align="center">19-21</td>
         <td align="center">3-5</td>
     </tr>
