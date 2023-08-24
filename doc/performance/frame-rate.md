@@ -78,6 +78,7 @@ We recommend recent devices released after iPhone SE2.
     <tr>
         <th>Input Resolution</th>
         <th>Scale</th>
+        <th>Mac Mini(M2)</th>        
         <th>iPhone 14</th>
         <th>iPad Pro 4th Gen</th>
         <th>iPhone SE2</th>
@@ -87,6 +88,7 @@ We recommend recent devices released after iPhone SE2.
     <tr>
         <th>640x360</th>
         <th>x2</th>
+        <td align="center">60+</td>
         <td align="center">30+</td>
         <td align="center">30+</td>
         <td align="center">30+</td>
@@ -96,6 +98,7 @@ We recommend recent devices released after iPhone SE2.
     <tr>
         <th>854x480</th>
         <th>x2</th>
+        <td align="center">60+</td>
         <td align="center">30+</td>
         <td align="center">30+</td>
         <td align="center">30+</td>
@@ -105,6 +108,7 @@ We recommend recent devices released after iPhone SE2.
     <tr>
         <th>1280x720</th>
         <th>x2</th>
+        <td align="center">37</td>
         <td align="center">26</td>
         <td align="center">24</td>
         <td align="center">20</td>
