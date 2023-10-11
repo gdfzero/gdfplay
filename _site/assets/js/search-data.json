@@ -146,69 +146,104 @@
     
     "relUrl": "/doc/performance/"
   },"21": {
+    "doc": "Latency",
+    "title": "Latency",
+    "content": "Latency refers to the time delay between the initiation of an action and the corresponding result or response. In the context of video processing, it is the time it takes for your video to be processed and delivered back to you. Low latency is essential for various applications, such as live streaming and video conferencing, where delays can impact the quality and interactivity of the user experience. With GDFPlay SDK, we are committed to delivering a video upscale service with consistently low latency. We understand that our customers rely on our service for real-time service, and we have implemented a range of strategies to minimize latency . ",
+    "url": "/doc/performance/latency.html",
+    
+    "relUrl": "/doc/performance/latency.html"
+  },"22": {
+    "doc": "Latency",
+    "title": "Android",
+    "content": "| Device | Resolution | SR Latency Range(ms) | Average SR Latency(ms) | . | Samsung Galaxy S20 | 1280 x 720 | 75 ~ 93 | 84 | . | Samsung Galaxy S21 | 854 x 480 | 40 ~ 44 | 42 | . | Samsung Galaxy S22 | 640 x 360 | 22 ~ 27 | 24.5 | . | Samsung Galaxy S23 | 1280 x 720 | 36 ~ 44 | 40 | . | Samsung Galaxy S24 | 854 x 480 | 20~ 22 | 21 | . | Samsung Galaxy S25 | 640 x 360 | 8 ~ 12 | 10 | . ",
+    "url": "/doc/performance/latency.html#android",
+    
+    "relUrl": "/doc/performance/latency.html#android"
+  },"23": {
+    "doc": "Latency",
+    "title": "iOS",
+    "content": "| Device | Resolution | SR Latency Range(ms) | Average SR Latency(ms) | . | iPhone 14 | 1280 x 720 | 100 ~ 120 | 110 | . | iPhone 14 | 854 x 480 | 59 ~ 61 | 60 | . | iPhone 14 | 640 x 360 | 59 ~ 61 | 60 | . | iPhone SE2 | 1280 x 720 | 90 ~ 105 | 97.5 | . | iPhone SE2 | 854 x 480 | 90 ~ 105 | 97.5 | . | iPhone SE2 | 640 x 360 | 59 ~ 61 | 60 | . ",
+    "url": "/doc/performance/latency.html#ios",
+    
+    "relUrl": "/doc/performance/latency.html#ios"
+  },"24": {
     "doc": "Quality",
     "title": "Quality",
     "content": "With GDFPlay SDK, we are dedicated to elevating video quality to provide users with an exceptional viewing experience. Our advanced AI algorithms ensure that users can enjoy enhanced video resolutions based on the input streaming resolutions. For 360p input resolution, GDFplay SDK delivers 540p quality output. When 480p is streamed as input users can expect to enjoy 720p (HD) quality, bringing videos with impressive definition and sharpness. With 720p input resolution, GDFplay SDK elevates the experience to 1080p (FHD) quality. | 360p Streaming Input | 360p → GDFPlay AI | 540p Original | . | | | . | 480p Streaming Input | 480p → GDFPlay AI | 720p(HD) Original | . | | | . | 720p(HD) Streaming Input | 720p(HD) → GDFplay AI | 1080p(FHD) Original | . | | | . ",
     "url": "/doc/performance/quality.html",
     
     "relUrl": "/doc/performance/quality.html"
-  },"22": {
+  },"25": {
     "doc": "Quick Start",
     "title": "Quick Start",
     "content": " ",
     "url": "/doc/android/quick-start.html",
     
     "relUrl": "/doc/android/quick-start.html"
-  },"23": {
+  },"26": {
     "doc": "Quick Start",
     "title": "Sample Codes",
     "content": "Usage of this class with MediaPlayer: . class VideoPlayActivity extends AppCompatActivity { // this ImageView must be placed in layout, where the video will be showed. private ImageView displayView; // play button should be placed in layout also. private Button btnPlay; MediaPlayer player = null; GDFSRProcessor videoSR = null; @Override protected void onCreate(Bundle savedInstanceState) { // media resolution should be one of: // 320x180, 426x240, 480x270, 640x360, 854x480 String mediaPath = \"https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_10MB.mp4\"; player = new MediaPlayer() player.setDataSource(mediaPath); player.prepareAsync(); player.setOnPreparedListener(mp -&gt; { videoSR = new GDFSRProcessor(activity, player.getVideoWidth(), player.getVideoHeight()); videoSR.setDisplayView(displayView); player.setSurface(videoSR.getPlayerSurface()); player.setOnCompletionListener(p -&gt; { videoSR.release(); player.release(); videoSR = null; player = null; }); player.start(); }); } ... } . Usage of this class with ExoPlayer: . class VideoPlayActivity extends AppCompatActivity { // this ImageView must be placed in layout, where the video will be showed. private ImageView displayView; // play button should be placed in layout also. private Button btnPlay; ExoPlayer player = null; GDFSRProcessor videoSR = null; @Override protected void onCreate(Bundle savedInstanceState) { // media resolution should be one of: // 320x180, 426x240, 480x270, 640x360, 854x480 String mediaPath = \"https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_10MB.mp4\"; Uri uri = Uri.parse(mediaPath); DataSource.Factory dataSourceFactory = new DefaultDataSource.Factory(this); MediaSource mediaSource; @C.ContentType int type = Util.inferContentType(uri); if (type == C.CONTENT_TYPE_DASH) { mediaSource = new DashMediaSource.Factory(dataSourceFactory) .createMediaSource(MediaItem.fromUri(uri)); } else if (type == C.CONTENT_TYPE_OTHER) { mediaSource = new ProgressiveMediaSource.Factory(dataSourceFactory) .createMediaSource(MediaItem..fromUri(uri)); } else { throw new IllegalStateException(); } int videoWidth, videoHeight, videoDuration; try (MediaMetadataRetriever retriever = new MediaMetadataRetriever()) { retriever.setDataSource(uri.toString(), new HashMap&lt;&gt;()); String height = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT); String width = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH); String duration = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION); videoWidth = Integer.parseInt(width); videoHeight = Integer.parseInt(height); videoDuration = Integer.parseInt(duration); } catch (IOException e) { throw new RuntimeException(\"cannot get video information: \"+uri.toString(), e); } player = new ExoPlayer.Builder(this).build(); player.setMediaSource(mediaSource); player.prepare(); videoSR = new GDFSRProcessor(this, videoWidth, videoHeight); videoSR.setDisplayView(displayView); player.setVideoSurface(videoSR.getPlayerSurface()); player.addListener(new Player.Listener() { @Override public void onPlaybackStateChanged(int playbackState) { Player.Listener.super.onPlaybackStateChanged(playbackState); if (playbackState == Player.STATE_ENDED) { videoSR.release(); player.release(); videoSR = null; player = null; } } }); player.play(); } ... } . ",
     "url": "/doc/android/quick-start.html#sample-codes",
     
     "relUrl": "/doc/android/quick-start.html#sample-codes"
-  },"24": {
+  },"27": {
     "doc": "Quick Start",
     "title": "Quick Start",
     "content": " ",
     "url": "/doc/ios/quick-start.html",
     
     "relUrl": "/doc/ios/quick-start.html"
-  },"25": {
+  },"28": {
     "doc": "Quick Start",
     "title": "Sample Codes",
     "content": "Run SDK on MTKView . import MetalKit import AVKit import VideoToolbox import GDFSR class VideoMetalView: MTKView { private var videoSR: GDFSRVideo? private var player: AVPlayer? deinit { stop() } func play(stream: URL) throws { let item: AVPlayerItem = AVPlayerItem(url: stream) let maxResSize: CGSize = CGSize(width: 854, height: 480) let scale: Int = 2 device = device ?? MTLCreateSystemDefaultDevice() framebufferOnly = false layer.isOpaque = true self.player = AVPlayer(playerItem: item) self.videoSR = GDFSRVideo(metalView: self, videoItem: item, maxResSize: maxResSize, scale: scale, completionHandler: { // now video can be played self.play() }) } func play() { player?.play() } func pause() { player?.pause() } func stop() { player?.rate = 0 videoSR?.release() videoSR = null player = null } } . Run SDK on VideoViewController . import Foundation import UIKit import OSLog import GDFSR class VideoViewController: UIViewController, VideoMetalViewDelegate { @IBOutlet weak var videoView: VideoMetalView! @IBOutlet weak var videoControls: UIStackView! @IBOutlet weak var sliProgress: UISlider! @IBOutlet weak var lblElapsed: UILabel! @IBOutlet weak var lblRemain: UILabel! @IBOutlet weak var closeControl: UIStackView! @IBOutlet weak var btnPlay: UIButton! @IBOutlet weak var txtFileName: UITextField! @IBOutlet weak var segBtns: UISegmentedControl! @IBOutlet weak var btnInfo: UIButton! @IBOutlet weak var btnRepeat: UIButton! @IBOutlet weak var noSDKText: UILabel! var fileItem: FileItem! private var showState = false private var isAuto = false private var isPlaying = true private let playImage = UIImage(systemName: \"play.fill\") private let pauseImage = UIImage(systemName: \"pause.fill\") private var showInfo = false private var repeatVideo = false private var prevPoint: CGPoint = .zero override func viewDidLoad() { super.viewDidLoad() videoView?.videoDelegate = self // set video file name txtFileName.text = fileItem.name showControls(true) // examplevideo String mediaPath = \"https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_10MB.mp4\" // video play DispatchQueue.main.async { if let vv = self.videoView { do { self.btnPlay?.setBackgroundImage(self.pauseImage, for: .normal) try vv.play(stream: URL(string:String mediaPath)!) print(\"[VideoViewControrller] play\") } catch { GDFLog.error(\"\\(error)\") self.onClose(self) } } else { self.onClose(self) } } } . ",
     "url": "/doc/ios/quick-start.html#sample-codes",
     
     "relUrl": "/doc/ios/quick-start.html#sample-codes"
-  },"26": {
+  },"29": {
     "doc": "Release Note",
     "title": "Release Note",
     "content": " ",
     "url": "/doc/release-note.html",
     
     "relUrl": "/doc/release-note.html"
-  },"27": {
+  },"30": {
+    "doc": "Release Note",
+    "title": "v1.1.2",
+    "content": "New Feature . | Add onboarding pages | . ",
+    "url": "/doc/release-note.html#v112",
+    
+    "relUrl": "/doc/release-note.html#v112"
+  },"31": {
+    "doc": "Release Note",
+    "title": "v1.1.1",
+    "content": "Fixed . | Shutdown when video is played with 270p x2 model in ios | . ",
+    "url": "/doc/release-note.html#v111",
+    
+    "relUrl": "/doc/release-note.html#v111"
+  },"32": {
     "doc": "Release Note",
     "title": "v1.1.0",
     "content": "Changed . | Implemented to be compatible with ABS(Adaptive Bitrate Streaming) | . Improvement . | Quality Improvement on Android | . Fixed . | Resolving memory leaks after video terminated in iOS | . ",
     "url": "/doc/release-note.html#v110",
     
     "relUrl": "/doc/release-note.html#v110"
-  },"28": {
+  },"33": {
     "doc": "Release Note",
     "title": "v1.0.0",
     "content": "Released . | GDFSR Released | . ",
     "url": "/doc/release-note.html#v100",
     
     "relUrl": "/doc/release-note.html#v100"
-  },"29": {
+  },"34": {
     "doc": "Requirements",
     "title": "Requirements",
     "content": ". | SDK: iOS 11 / Storyboard 11 | SDK Compile iOS 11 | laguege: swift | Cocoapod install(TensorFlowLiteSwift/Metal, CryptoSwift) | It does not work properly in the x86-based iphone simulator. (Please test on the actual device) | Due to the tensorflow lite suggestion, the SDK only works on arm64 based mobiles. | . ",
     "url": "/doc/ios/requirements.html",
     
     "relUrl": "/doc/ios/requirements.html"
-  },"30": {
+  },"35": {
     "doc": "Requirements",
     "title": "Requirements",
     "content": ". | SDK Minimum: Android SDK 24 | SDK compilation: Android SDK 33 | NDK : Android NDK 21.4 | language: Java/Kotlin | It does not work properly in the x86-based android simulator. (Please test on the actual device) | Due to the tensorflow lite suggestion, the SDK only works on arm64-v8a and armeabi-v7a based mobiles. | . ",

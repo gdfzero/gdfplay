@@ -5,6 +5,13 @@ nav_order: 6
 ---
 
 # Release Note
+## v1.1.2
+### New Feature
+- Add onboarding pages
+
+## v1.1.1
+### Fixed
+- Shutdown when video is played with 270p x2 model in ios
 
 ## v1.1.0
 ### Changed
