@@ -15,8 +15,8 @@ To ensure user expeirence, we have tested battery consumption on both Android an
     <tr>
         <th>Device</th>
         <th>Time Frame</th>
-        <th>Battery Before SR</th>
-        <th>Battery After SR</th>
+        <th>Start Usage</th>
+        <th>End Usage</th>
         <th>Battery Usage</th>
     </tr>
     <tr>
@@ -69,8 +69,8 @@ To ensure user expeirence, we have tested battery consumption on both Android an
     <tr>
         <th>Device</th>
         <th>Time Frame</th>
-        <th>Battery Before SR</th>
-        <th>Battery After SR</th>
+        <th>Start Usage</th>
+        <th>End Usage</th>
         <th>Battery Usage</th>
     </tr>
     <tr>
@@ -96,4 +96,4 @@ To ensure user expeirence, we have tested battery consumption on both Android an
     </tr>
 </table>
 
-Results of GDFPlay battery consumption measurement using offline video (854x480)
+Results of GDFPlay battery consumption measurement using offline video (854x480@2x2)

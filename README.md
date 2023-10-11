@@ -10,7 +10,7 @@ GDFPlay SDK is a cutting-edge **AI** solution designed to elevate video quality 
 
 **Optimal Performance in Challenging Networks**: GDFPlay SDK not only enhances video quality but also addresses the constraints of unreliable or low-bandwidth networks. By reducing the need for frequent data transfers, it directly contributes to an improved user experience, even in suboptimal network conditions.
 
-**Cross-Platform Compatibility**: Developed for both iOS and Android devices, GDFPlay SDK offers a unified solution for delivering top-tier video quality to a diverse user base.
+**Cross-Platform and codec Compatibility**: Developed for both iOS and Android devices, GDFPlay SDK supports all existing codecs and offers a unified solution for delivering top-tier video quality to a diverse user base.
 
 **Seamless Integration**: GDFPlay SDK is designed to seamlessly integrate into your existing systems, providing a hassle-free experience for developers.
 
