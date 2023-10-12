@@ -79,7 +79,7 @@ table tbody tr th {
             <td class="lastcell" align="right">5%</td>
         </tr>
         <tr>
-            <th rowspan='6'>Samsung Galaxy S21 Ultra 5G</th>
+            <th rowspan='6'>Samsung Galaxy S20 Ultra 5G</th>
             <th align="center" rowspan='3'>854x480<br>x2</th>
             <td align="center">20 mins</td>
             <td align="right">100%</td>
