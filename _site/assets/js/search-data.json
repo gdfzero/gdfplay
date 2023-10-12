@@ -155,7 +155,7 @@
   },"22": {
     "doc": "Latency",
     "title": "Android",
-    "content": "| Device | Resolution | SR Latency Range(ms) | Average SR Latency(ms) | . | Samsung Galaxy S20 | 1280 x 720 | 75 ~ 93 | 84 | . | Samsung Galaxy S21 | 854 x 480 | 40 ~ 44 | 42 | . | Samsung Galaxy S22 | 640 x 360 | 22 ~ 27 | 24.5 | . | Samsung Galaxy S23 | 1280 x 720 | 36 ~ 44 | 40 | . | Samsung Galaxy S24 | 854 x 480 | 20~ 22 | 21 | . | Samsung Galaxy S25 | 640 x 360 | 8 ~ 12 | 10 | . ",
+    "content": "| Device | Resolution | SR Latency Range(ms) | Average SR Latency(ms) | . | Samsung Galaxy S20 | 1280 x 720 | 75 ~ 93 | 84 | . | Samsung Galaxy S20 | 854 x 480 | 40 ~ 44 | 42 | . | Samsung Galaxy S20 | 640 x 360 | 22 ~ 27 | 24.5 | . | Samsung Galaxy S23 | 1280 x 720 | 36 ~ 44 | 40 | . | Samsung Galaxy S23 | 854 x 480 | 20~ 22 | 21 | . | Samsung Galaxy S23 | 640 x 360 | 8 ~ 12 | 10 | . ",
     "url": "/doc/performance/latency.html#android",
     
     "relUrl": "/doc/performance/latency.html#android"
