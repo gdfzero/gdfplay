@@ -43,14 +43,14 @@
   },"6": {
     "doc": "Battery Usage",
     "title": "Android",
-    "content": "| Device | Time Frame | Battery Before SR | Battery After SR | Battery Usage | . | S23 | 20 mins | 100% | 96% | 4% | . | S23 | 30 mins | 95% | 87% | 8% | . | S23 | 60 mins (1 hour) | 95% | 79% | 16% | . | S21 Ultra 5G | 20 mins | 100% | 94% | 6% | . | S21 Ultra 5G | 30 mins | 95% | 87% | 8% | . | S21 Ultra 5G | 60 mins (1 hour) | 95% | 79% | 16% | . ",
+    "content": "| Device | Config | Time Frame | Start Usage | End Usage | Battery Usage | . | Samsung Galaxy S23 | 854x480x2 | 20 mins | 100% | 96% | 4% | . | 30 mins | 95% | 88% | 7% | . | 60 mins | 95% | 79% | 16% | . | 1280x720x1 | 20 mins | 100% | 99% | 1% | . | 30 mins | 100% | 97% | 3% | . | 60 mins | 100% | 95% | 5% | . | Samsung Galaxy S21 Ultra 5G | 854x480x2 | 20 mins | 100% | 94% | 6% | . | 30 mins | 95% | 87% | 8% | . | 60 mins | 95% | 79% | 16% | . | 1280x720x1 | 20 mins | 100% | 98% | 2% | . | 30 mins | 100% | 96% | 4% | . | 60 mins | 100% | 89% | 11% | . ",
     "url": "/doc/performance/battery-usage.html#android",
     
     "relUrl": "/doc/performance/battery-usage.html#android"
   },"7": {
     "doc": "Battery Usage",
     "title": "iOS",
-    "content": "| Device | Time Frame | Battery Before SR | Battery After SR | Battery Usage | . | iPhone 14 | 20 mins | 97% | 92% | 5% | . | iPhone 14 | 30 mins | 97% | 88% | 9% | . | iPhone 14 | 60 mins (1 hour) | 98% | 81% | 17% | . Results of GDFPlay battery consumption measurement using offline video (854x480) . ",
+    "content": "| Device | Config | Time Frame | Start Usage | End Usage | Battery Usage | . | iPhone 14 | 854x480x2 | 20 mins | 97% | 92% | 5% | . | 30 mins | 97% | 88% | 9% | . | 60 mins | 98% | 81% | 17% | . | 1280x720x1 | 20 mins | 100% | 100% | 0% | . | 30 mins | 100% | 98% | 2% | . | 60 mins | 100% | 91% | 9% | . ",
     "url": "/doc/performance/battery-usage.html#ios",
     
     "relUrl": "/doc/performance/battery-usage.html#ios"
@@ -78,7 +78,7 @@
   },"11": {
     "doc": "Frame Rate",
     "title": "iOS",
-    "content": "We recommend recent devices released after iPhone SE2. | Input Resolution | Scale | iPhone 14 | iPad Pro 4th Gen | iPhone SE2 | iPhone 8 | iPhone 6 | . | 640x360 | x2 | 30 | 30 | 30 | 30 | 7-8 | . | 854x480 | x2 | 30 | 30 | 30 | 19-21 | 3-5 | . | 1280x720 | x2 | 26 | 24 | 20 | 11-12 | 1-3 | . The table represents the frames per second on each device with three different input resolutions. | Maximum frame rate of iPhone is set to 30fps by a player. | . When streaming videos with 360p,480p and 720p input resolutions GDFPlay SDK will enhance videos in real-time and with the devices tested, we guarantee the following frames per second as provided in the table above. ",
+    "content": "We recommend recent devices released after iPhone SE2. | Input Resolution | Scale | Mac Mini(M2) | iPhone 14 | iPad Pro 4th Gen | iPhone SE2 | iPhone 8 | iPhone 6 | . | 640x360 | x2 | 60+ | 30+ | 30+ | 30+ | 30+ | 7-8 | . | 854x480 | x2 | 60+ | 30+ | 30+ | 30+ | 19-21 | 3-5 | . | 1280x720 | x2 | 37 | 26 | 24 | 20 | 11-12 | 1-3 | . The table represents the frames per second on each device with three different input resolutions. | Maximum frame rate of iPhone is set to 30fps by a player. | . When streaming videos with 360p,480p and 720p input resolutions GDFPlay SDK will enhance videos in real-time and with the devices tested, we guarantee the following frames per second as provided in the table above. ",
     "url": "/doc/performance/frame-rate.html#ios",
     
     "relUrl": "/doc/performance/frame-rate.html#ios"
