@@ -35,13 +35,13 @@ With GDFPlay SDK, we are committed to delivering a video upscale service with co
         <td align="center">84</td>
     </tr>
     <tr>
-        <td align="center">Samsung Galaxy S21</td>
+        <td align="center">Samsung Galaxy S20</td>
         <td align="center">854 x 480</td>
         <td align="center">40 ~ 44</td>
         <td align="center">42</td>
     </tr>
     <tr>
-        <td align="center">Samsung Galaxy S22</td>
+        <td align="center">Samsung Galaxy S20</td>
         <td align="center">640 x 360</td>
         <td align="center">22 ~  27</td>
         <td align="center">24.5</td>
@@ -53,13 +53,13 @@ With GDFPlay SDK, we are committed to delivering a video upscale service with co
         <td align="center">40</td>
     </tr>
     <tr>
-        <td align="center">Samsung Galaxy S24</td>
+        <td align="center">Samsung Galaxy S23</td>
         <td align="center">854 x 480</td>
         <td align="center">20~ 22</td>
         <td align="center">21</td>
     </tr>
     <tr>
-        <td align="center">Samsung Galaxy S25</td>
+        <td align="center">Samsung Galaxy S23</td>
         <td align="center">640 x 360</td>
         <td align="center">8 ~ 12</td>
         <td align="center">10</td>
